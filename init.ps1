@@ -21,7 +21,7 @@ $PluginURI = Read-Host -Prompt "Plugin URI"
 $Description = Read-Host -Prompt "Description"
 $Author = Read-Host -Prompt "Author"
 $AuthorURI = Read-Host -Prompt "Author URI"
-$TextDomain = Read-Host -Prompt "Text Domain"
+$TextDomain = Read-Host -Prompt "Text Doman"
 
 # # Obtenir l'URL du dépôt Git distant
 $gitRemoteUrl = git -C $PLUGIN_DIR remote get-url origin
@@ -37,7 +37,7 @@ $Content = Get-Content -Path $PLUGIN_FILE
 
 # # Remplacer les anciennes données par les nouvelles données
 $Content = $Content -replace "WordPress Plugin Boilerplate", $PluginName `
-    -replace "http://example.com/plugin-name-url/", $PluginURI `
+    -replace "http://example.com/plugin-name-uri/", $PluginURI `
     -replace "This is a short description of what the plugin does. It's displayed in the WordPress admin area.", $Description `
     -replace "Your Name or Your Company", $Author `
     -replace "http://example.com/", $AuthorURI `
